@@ -98,6 +98,7 @@
     <Compile Include="PageObjects\DensityAltitudeApplicationPage_Firefox_ShelquistEngineering.cs" />
     <Compile Include="PageObjects\DensityAltitudeApplicationPage_InternetExplorer_PilotFriend.cs" />
     <Compile Include="PageObjects\DensityAltitudeApplicationPage_InternetExplorer_ShelquistEngineering.cs" />
+    <Compile Include="PageObjects\SeleniumCommonActions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StepDefs\DensityAltitudeStepDefs.cs" />
   </ItemGroup>

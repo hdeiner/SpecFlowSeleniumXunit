@@ -20,12 +20,14 @@ namespace SpecFlowSeleniumXunit.PageObjects
         private IWebDriver webDriver = null;
         private WebDriverWait webDriverWait = null;
         private string baseURL = "http://www.pilotfriend.com/flightplanning/flight%20planning/calculators/density_altitude_calc.htm";
+        private SeleniumCommonActions seleniumCommonActions = null;
 
         public DensityAltitudeApplicationPage_InternetExplorer_PilotFriend()
         {
             System.Environment.SetEnvironmentVariable("webdriver.ie.driver", @"bin/debug/IEDriverServer.exe");
             webDriver = new InternetExplorerDriver();
             webDriverWait = new WebDriverWait(webDriver, new TimeSpan(0, 0, 10));
+            seleniumCommonActions = new SeleniumCommonActions(webDriver);
         }
 
         public void loadPage()
@@ -100,7 +102,7 @@ namespace SpecFlowSeleniumXunit.PageObjects
             {
                 densityAltitude = new Altitude(webDriver.FindElement(By.Name("densaltzm")).GetAttribute("value"), densityAltitudeUnits);
             }
-            SaveScreenshot();
+            seleniumCommonActions.SaveScreenshot();
             return densityAltitude;
         }
 
@@ -113,13 +115,6 @@ namespace SpecFlowSeleniumXunit.PageObjects
         {
             webDriver.Close();
             webDriver.Dispose();
-        }
-
-        private void SaveScreenshot()
-        {
-            string fileName = "./" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".jpeg";
-            Screenshot screenShot = ((ITakesScreenshot)webDriver).GetScreenshot();
-            screenShot.SaveAsFile(fileName, ScreenshotImageFormat.Jpeg);
         }
     }
 }

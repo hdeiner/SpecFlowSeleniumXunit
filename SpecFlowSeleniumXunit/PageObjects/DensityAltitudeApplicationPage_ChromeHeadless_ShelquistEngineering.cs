@@ -20,7 +20,7 @@ namespace SpecFlowSeleniumXunit.PageObjects
         private IWebDriver webDriver = null;
         private WebDriverWait webDriverWait = null;
         private string baseURL = "https://wahiduddin.net/calc/calc_da.htm";
-
+        private SeleniumCommonActions seleniumCommonActions = null;
         public DensityAltitudeApplicationPage_ChromeHeadless_ShelquistEngineering()
         {
             System.Environment.SetEnvironmentVariable("webdriver.chrome.driver", @"bin/debug/chromedriver.exe");
@@ -28,6 +28,7 @@ namespace SpecFlowSeleniumXunit.PageObjects
             options.AddArguments("headless");
             webDriver = new ChromeDriver(options);
             webDriverWait = new WebDriverWait(webDriver, new TimeSpan(0, 0, 10));
+            seleniumCommonActions = new SeleniumCommonActions(webDriver);
         }
 
         public void loadPage()

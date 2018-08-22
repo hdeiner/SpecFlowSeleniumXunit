@@ -1,4 +1,4 @@
-This project is a lot like https://github.com/hdeiner/Cucumber_Selenium_PageObject_Sample, in that it wants to reinforce a more correct way to accomplish Selenium testing driven by SpecFlow (Cucumber for Windows) to accomplish user interface testing for web applications, where the testers are more comfortable using Visula Studio in C# under Windows.
+This project is a lot like https://github.com/hdeiner/Cucumber_Selenium_PageObject_Sample, in that it wants to reinforce a more correct way to accomplish Selenium testing driven by SpecFlow (Cucumber for Windows) to accomplish user interface testing for web applications, where the testers are more comfortable using Visual Studio in C# under Windows.
 
 Again, the goals (from the Cucumber for Java project mentioned) are:
 In particular, the following is demonstrated:
